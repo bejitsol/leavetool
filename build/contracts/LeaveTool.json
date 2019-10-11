@@ -1,0 +1,1423 @@
+{
+  "contractName": "LeaveTool",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "employees",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "username",
+          "type": "string"
+        },
+        {
+          "name": "fullName",
+          "type": "string"
+        },
+        {
+          "name": "location",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "employeeCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"employees\",\"outputs\":[{\"name\":\"id\",\"type\":\"uint256\"},{\"name\":\"username\",\"type\":\"string\"},{\"name\":\"fullName\",\"type\":\"string\"},{\"name\":\"location\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"employeeCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/bevan/Desktop/eth/leavetool/contracts/LeaveTool.sol\":\"LeaveTool\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/bevan/Desktop/eth/leavetool/contracts/LeaveTool.sol\":{\"keccak256\":\"0x0a5e1a9a979df71e1b191b7097611a991c94ce89c3bc7368afeb82a6785e3cad\",\"urls\":[\"bzzr://e0c7084631f8576e77fb720579ad1df839ca35636885dcedea1e0ef601500065\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506100c16040518060400160405280600881526020017f6a6f7963626576610000000000000000000000000000000000000000000000008152506040518060400160405280600b81526020017f426576616e204a6f7963650000000000000000000000000000000000000000008152506040518060400160405280600381526020017f43505400000000000000000000000000000000000000000000000000000000008152506100c660201b60201c565b61021d565b60016000815480929190600101919050555060405180608001604052806001548152602001848152602001838152602001828152506000806001548152602001908152602001600020600082015181600001556020820151816001019080519060200190610135929190610178565b506040820151816002019080519060200190610152929190610178565b50606082015181600301908051906020019061016f929190610178565b50905050505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106101b957805160ff19168380011785556101e7565b828001600101855582156101e7579182015b828111156101e65782518255916020019190600101906101cb565b5b5090506101f491906101f8565b5090565b61021a91905b808211156102165760008160009055506001016101fe565b5090565b90565b6104098061022c6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80634739326b1461003b5780639047bf58146101c1575b600080fd5b6100676004803603602081101561005157600080fd5b81019080803590602001909291905050506101df565b60405180858152602001806020018060200180602001848103845287818151815260200191508051906020019080838360005b838110156100b557808201518184015260208101905061009a565b50505050905090810190601f1680156100e25780820380516001836020036101000a031916815260200191505b50848103835286818151815260200191508051906020019080838360005b8381101561011b578082015181840152602081019050610100565b50505050905090810190601f1680156101485780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b83811015610181578082015181840152602081019050610166565b50505050905090810190601f1680156101ae5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b6101c96103d7565b6040518082815260200191505060405180910390f35b6000602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102915780601f1061026657610100808354040283529160200191610291565b820191906000526020600020905b81548152906001019060200180831161027457829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561032f5780601f106103045761010080835404028352916020019161032f565b820191906000526020600020905b81548152906001019060200180831161031257829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103cd5780601f106103a2576101008083540402835291602001916103cd565b820191906000526020600020905b8154815290600101906020018083116103b057829003601f168201915b5050505050905084565b6001548156fea165627a7a7230582073548e4cb61864a444b95c16ed7eb59cfab89791614e668ad9074fbd35374ba50029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80634739326b1461003b5780639047bf58146101c1575b600080fd5b6100676004803603602081101561005157600080fd5b81019080803590602001909291905050506101df565b60405180858152602001806020018060200180602001848103845287818151815260200191508051906020019080838360005b838110156100b557808201518184015260208101905061009a565b50505050905090810190601f1680156100e25780820380516001836020036101000a031916815260200191505b50848103835286818151815260200191508051906020019080838360005b8381101561011b578082015181840152602081019050610100565b50505050905090810190601f1680156101485780820380516001836020036101000a031916815260200191505b50848103825285818151815260200191508051906020019080838360005b83811015610181578082015181840152602081019050610166565b50505050905090810190601f1680156101ae5780820380516001836020036101000a031916815260200191505b5097505050505050505060405180910390f35b6101c96103d7565b6040518082815260200191505060405180910390f35b6000602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102915780601f1061026657610100808354040283529160200191610291565b820191906000526020600020905b81548152906001019060200180831161027457829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561032f5780601f106103045761010080835404028352916020019161032f565b820191906000526020600020905b81548152906001019060200180831161031257829003601f168201915b505050505090806003018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103cd5780601f106103a2576101008083540402835291602001916103cd565b820191906000526020600020905b8154815290600101906020018083116103b057829003601f168201915b5050505050905084565b6001548156fea165627a7a7230582073548e4cb61864a444b95c16ed7eb59cfab89791614e668ad9074fbd35374ba50029",
+  "sourceMap": "26:569:0:-;;;293:77;8:9:-1;5:2;;;30:1;27;20:12;5:2;293:77:0;320:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:11;;;:45;;:::i;:::-;26:569;;375:217;485:13;;:15;;;;;;;;;;;;;532:55;;;;;;;;541:13;;532:55;;;;556:9;532:55;;;;566:9;532:55;;;;577:9;532:55;;;505:9;:24;515:13;;505:24;;;;;;;;;;;:82;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;375:217;;;:::o;26:569::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "26:569:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:569:0;;;;;;;;;;;;;;;;;;;;;;;;195:42;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;195:42:0;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;195:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;195:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;195:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;262:25;;;:::i;:::-;;;;;;;;;;;;;;;;;;;195:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;262:25::-;;;;:::o",
+  "source": "pragma solidity 0.5.8;\r\n\r\ncontract LeaveTool {\r\n\t// Employee model\r\n\r\n\tstruct Employee {\r\n\t\tuint id;\r\n\t\tstring username;\r\n\t\tstring fullName;\r\n\t\tstring location;\r\n\t}\r\n\r\n\t// Read/Write Employees\r\n\tmapping(uint => Employee) public employees;\r\n\r\n\t//Employee count\r\n\tuint public employeeCount;\r\n\r\n\tconstructor () public {\r\n\t\taddEmployee(\"joycbeva\", \"Bevan Joyce\", \"CPT\");\r\n\t}\r\n\r\n\tfunction addEmployee (string memory _username, string memory _fullName, string memory _location) private {\r\n\t\temployeeCount++;\r\n\t\temployees[employeeCount] = Employee(employeeCount, _username,_fullName, _location);\r\n\t}\r\n}",
+  "sourcePath": "C:/Users/bevan/Desktop/eth/leavetool/contracts/LeaveTool.sol",
+  "ast": {
+    "absolutePath": "/C/Users/bevan/Desktop/eth/leavetool/contracts/LeaveTool.sol",
+    "exportedSymbols": {
+      "LeaveTool": [
+        51
+      ]
+    },
+    "id": 52,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 51,
+        "linearizedBaseContracts": [
+          51
+        ],
+        "name": "LeaveTool",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "LeaveTool.Employee",
+            "id": 10,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "92:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "92:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "username",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "104:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "104:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "fullName",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "124:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "location",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "144:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "144:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Employee",
+            "nodeType": "StructDefinition",
+            "scope": 51,
+            "src": "71:93:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "name": "employees",
+            "nodeType": "VariableDeclaration",
+            "scope": 51,
+            "src": "195:42:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+              "typeString": "mapping(uint256 => struct LeaveTool.Employee)"
+            },
+            "typeName": {
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "195:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+                "typeString": "mapping(uint256 => struct LeaveTool.Employee)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Employee",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 10,
+                "src": "211:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Employee_$10_storage_ptr",
+                  "typeString": "struct LeaveTool.Employee"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "employeeCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 51,
+            "src": "262:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "262:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 25,
+              "nodeType": "Block",
+              "src": "315:55:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "6a6f796362657661",
+                        "id": 20,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "332:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_727415fdb90316b9fd3f5c9c54a0499762937fdda23722c967812c82bb1377ec",
+                          "typeString": "literal_string \"joycbeva\""
+                        },
+                        "value": "joycbeva"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "426576616e204a6f796365",
+                        "id": 21,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "344:13:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0e3d92c5fa7d8ccbf387077a9b648a0a94661dd3f0ac2865b2f236996c960522",
+                          "typeString": "literal_string \"Bevan Joyce\""
+                        },
+                        "value": "Bevan Joyce"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "435054",
+                        "id": 22,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "359:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_53b30615ab9c9eaf19e9073964cad6a5aa565fed1e7685bfbe8c1c6b390c8476",
+                          "typeString": "literal_string \"CPT\""
+                        },
+                        "value": "CPT"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_727415fdb90316b9fd3f5c9c54a0499762937fdda23722c967812c82bb1377ec",
+                          "typeString": "literal_string \"joycbeva\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0e3d92c5fa7d8ccbf387077a9b648a0a94661dd3f0ac2865b2f236996c960522",
+                          "typeString": "literal_string \"Bevan Joyce\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_53b30615ab9c9eaf19e9073964cad6a5aa565fed1e7685bfbe8c1c6b390c8476",
+                          "typeString": "literal_string \"CPT\""
+                        }
+                      ],
+                      "id": 19,
+                      "name": "addEmployee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 50,
+                      "src": "320:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory)"
+                      }
+                    },
+                    "id": 23,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "320:45:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 24,
+                  "nodeType": "ExpressionStatement",
+                  "src": "320:45:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 26,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "305:2:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "315:0:0"
+            },
+            "scope": 51,
+            "src": "293:77:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 49,
+              "nodeType": "Block",
+              "src": "480:112:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "485:15:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 35,
+                      "name": "employeeCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "485:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "485:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 38,
+                        "name": "employees",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "505:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+                          "typeString": "mapping(uint256 => struct LeaveTool.Employee storage ref)"
+                        }
+                      },
+                      "id": 40,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 39,
+                        "name": "employeeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "515:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "505:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Employee_$10_storage",
+                        "typeString": "struct LeaveTool.Employee storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 42,
+                          "name": "employeeCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "541:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 43,
+                          "name": "_username",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 28,
+                          "src": "556:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 44,
+                          "name": "_fullName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30,
+                          "src": "566:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 45,
+                          "name": "_location",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 32,
+                          "src": "577:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 41,
+                        "name": "Employee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "532:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Employee_$10_storage_ptr_$",
+                          "typeString": "type(struct LeaveTool.Employee storage pointer)"
+                        }
+                      },
+                      "id": 46,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "532:55:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Employee_$10_memory",
+                        "typeString": "struct LeaveTool.Employee memory"
+                      }
+                    },
+                    "src": "505:82:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Employee_$10_storage",
+                      "typeString": "struct LeaveTool.Employee storage ref"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "505:82:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 50,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addEmployee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "_username",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "397:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "397:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "_fullName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "422:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "422:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "_location",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "447:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "447:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "396:75:0"
+            },
+            "returnParameters": {
+              "id": 34,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "480:0:0"
+            },
+            "scope": 51,
+            "src": "375:217:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          }
+        ],
+        "scope": 52,
+        "src": "26:569:0"
+      }
+    ],
+    "src": "0:595:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/bevan/Desktop/eth/leavetool/contracts/LeaveTool.sol",
+    "exportedSymbols": {
+      "LeaveTool": [
+        51
+      ]
+    },
+    "id": 52,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".8"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 51,
+        "linearizedBaseContracts": [
+          51
+        ],
+        "name": "LeaveTool",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "LeaveTool.Employee",
+            "id": 10,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "92:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "92:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "username",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "104:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "104:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "fullName",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "124:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 9,
+                "name": "location",
+                "nodeType": "VariableDeclaration",
+                "scope": 10,
+                "src": "144:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 8,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "144:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Employee",
+            "nodeType": "StructDefinition",
+            "scope": 51,
+            "src": "71:93:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14,
+            "name": "employees",
+            "nodeType": "VariableDeclaration",
+            "scope": 51,
+            "src": "195:42:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+              "typeString": "mapping(uint256 => struct LeaveTool.Employee)"
+            },
+            "typeName": {
+              "id": 13,
+              "keyType": {
+                "id": 11,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "203:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "195:25:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+                "typeString": "mapping(uint256 => struct LeaveTool.Employee)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 12,
+                "name": "Employee",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 10,
+                "src": "211:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Employee_$10_storage_ptr",
+                  "typeString": "struct LeaveTool.Employee"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 16,
+            "name": "employeeCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 51,
+            "src": "262:25:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "262:4:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 25,
+              "nodeType": "Block",
+              "src": "315:55:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "6a6f796362657661",
+                        "id": 20,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "332:10:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_727415fdb90316b9fd3f5c9c54a0499762937fdda23722c967812c82bb1377ec",
+                          "typeString": "literal_string \"joycbeva\""
+                        },
+                        "value": "joycbeva"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "426576616e204a6f796365",
+                        "id": 21,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "344:13:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0e3d92c5fa7d8ccbf387077a9b648a0a94661dd3f0ac2865b2f236996c960522",
+                          "typeString": "literal_string \"Bevan Joyce\""
+                        },
+                        "value": "Bevan Joyce"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "435054",
+                        "id": 22,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "359:5:0",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_53b30615ab9c9eaf19e9073964cad6a5aa565fed1e7685bfbe8c1c6b390c8476",
+                          "typeString": "literal_string \"CPT\""
+                        },
+                        "value": "CPT"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_727415fdb90316b9fd3f5c9c54a0499762937fdda23722c967812c82bb1377ec",
+                          "typeString": "literal_string \"joycbeva\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0e3d92c5fa7d8ccbf387077a9b648a0a94661dd3f0ac2865b2f236996c960522",
+                          "typeString": "literal_string \"Bevan Joyce\""
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_53b30615ab9c9eaf19e9073964cad6a5aa565fed1e7685bfbe8c1c6b390c8476",
+                          "typeString": "literal_string \"CPT\""
+                        }
+                      ],
+                      "id": 19,
+                      "name": "addEmployee",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 50,
+                      "src": "320:11:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory,string memory,string memory)"
+                      }
+                    },
+                    "id": 23,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "320:45:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 24,
+                  "nodeType": "ExpressionStatement",
+                  "src": "320:45:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 26,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "305:2:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "315:0:0"
+            },
+            "scope": 51,
+            "src": "293:77:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 49,
+              "nodeType": "Block",
+              "src": "480:112:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 36,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "485:15:0",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 35,
+                      "name": "employeeCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "485:13:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 37,
+                  "nodeType": "ExpressionStatement",
+                  "src": "485:15:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 38,
+                        "name": "employees",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14,
+                        "src": "505:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Employee_$10_storage_$",
+                          "typeString": "mapping(uint256 => struct LeaveTool.Employee storage ref)"
+                        }
+                      },
+                      "id": 40,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 39,
+                        "name": "employeeCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16,
+                        "src": "515:13:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "505:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Employee_$10_storage",
+                        "typeString": "struct LeaveTool.Employee storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 42,
+                          "name": "employeeCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16,
+                          "src": "541:13:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 43,
+                          "name": "_username",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 28,
+                          "src": "556:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 44,
+                          "name": "_fullName",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 30,
+                          "src": "566:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 45,
+                          "name": "_location",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 32,
+                          "src": "577:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        ],
+                        "id": 41,
+                        "name": "Employee",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10,
+                        "src": "532:8:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Employee_$10_storage_ptr_$",
+                          "typeString": "type(struct LeaveTool.Employee storage pointer)"
+                        }
+                      },
+                      "id": 46,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "532:55:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Employee_$10_memory",
+                        "typeString": "struct LeaveTool.Employee memory"
+                      }
+                    },
+                    "src": "505:82:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Employee_$10_storage",
+                      "typeString": "struct LeaveTool.Employee storage ref"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "505:82:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 50,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addEmployee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 28,
+                  "name": "_username",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "397:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 27,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "397:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 30,
+                  "name": "_fullName",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "422:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 29,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "422:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 32,
+                  "name": "_location",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "447:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "447:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "396:75:0"
+            },
+            "returnParameters": {
+              "id": 34,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "480:0:0"
+            },
+            "scope": 51,
+            "src": "375:217:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "private"
+          }
+        ],
+        "scope": 52,
+        "src": "26:569:0"
+      }
+    ],
+    "src": "0:595:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xEe563521478A5D829Aee948A6877EF568418C4B3",
+      "transactionHash": "0x41efb8dc121ac76eb3aa0cc9dae763385436755b4482a73187dede8b7159baa4"
+    }
+  },
+  "schemaVersion": "3.0.16",
+  "updatedAt": "2019-10-11T06:35:32.877Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
