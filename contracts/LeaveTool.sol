@@ -28,7 +28,7 @@ contract LeaveTool {
 
 	constructor () public {
 		owner = msg.sender;
-		intCalculator = 10;
+		power = 10;
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
 	}
 
