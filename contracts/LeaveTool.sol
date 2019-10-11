@@ -6,7 +6,7 @@ contract LeaveTool {
 	struct Employee {
 		uint id;
 		string username;
-		string fullName;
+		string fullname;
 		string location;
 	}
 
@@ -20,8 +20,8 @@ contract LeaveTool {
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
 	}
 
-	function addEmployee (string memory _username, string memory _fullName, string memory _location) private {
+	function addEmployee (string memory _username, string memory _fullname, string memory _location) private {
 		employeeCount++;
-		employees[employeeCount] = Employee(employeeCount, _username,_fullName, _location);
+		employees[employeeCount] = Employee(employeeCount, _username, _fullname, _location);
 	}
 }
