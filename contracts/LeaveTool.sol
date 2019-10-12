@@ -8,9 +8,14 @@ contract LeaveTool {
 
 	using SafeMath8 for uint8;
 	using SafeMath for uint256;
-	address public owner;
 
+	address public owner;
 	uint8 power;
+	uint private employeeCount;
+
+	mapping(uint => Employee) public employees;
+	mapping(address => uint8) public managers;
+
 	// Employee model
 	struct Employee {
 		//Look at using keccak256 hash instead of uint
@@ -22,14 +27,9 @@ contract LeaveTool {
 		address accountAddress;
 	}
 
-	// Read/Write Employees
-	mapping(uint => Employee) public employees;
-	mapping(address => uint8) public managers;
-	//mapping(address => uint) private employeeAddress;
-
-	//Employee count
-	uint private employeeCount;
-
+	/*
+	 * Modifiers
+	*/
 
 	modifier onlyOwner {
 		require(msg.sender == owner, "Unauthorized");
@@ -41,18 +41,34 @@ contract LeaveTool {
 		_;
 	}
 
+	/*
+	 * Constructor
+	*/
+
 	constructor () public {
 		owner = msg.sender;
 		power = 10;
-
 		managers[msg.sender] = 1;
 
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
 	}
 
+	/*
+	 * Get Methods
+	*/
+
 	function getEmployeeCount() public view returns (uint) {
 		return employeeCount;
 	}
+
+	function getEmployeeAddress(uint _id) public view returns (address) {
+		//Do some validation so it's not public
+		return employees[_id].accountAddress;
+	}
+
+	/*
+	 * Set Methods
+	*/
 
 	function setPower(uint8 _power) public onlyOwner {
 		power = _power;
@@ -74,11 +90,7 @@ contract LeaveTool {
 	function setEmployeeLeave(uint _id, uint8 _leaveAmount) public onlyManager {
 		employees[_id].leaveTotal = _leaveAmount;
 	}
-
-	function getEmployeeAddress(uint _id) public view returns (address) {
-		//Do some validation so it's not public
-		return employees[_id].accountAddress;
-	}
+	
 
 	function decreaseEmployeeLeave(uint _id, uint8 _decreaseAmount) public onlyManager {
 		require(employees[_id].leaveTotal >= _decreaseAmount);
