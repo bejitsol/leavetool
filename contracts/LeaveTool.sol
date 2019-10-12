@@ -28,7 +28,7 @@ contract LeaveTool {
 	//mapping(address => uint) private employeeAddress;
 
 	//Employee count
-	uint public employeeCount;
+	uint private employeeCount;
 
 
 	modifier onlyOwner {
@@ -37,7 +37,7 @@ contract LeaveTool {
 	}
 
 	modifier onlyManager {
-		require(managers[msg.sender] == 1);
+		require(managers[msg.sender] == 1, "Unauthorized");
 		_;
 	}
 
@@ -45,7 +45,13 @@ contract LeaveTool {
 		owner = msg.sender;
 		power = 10;
 
+		managers[msg.sender] = 1;
+
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
+	}
+
+	function getEmployeeCount() public view returns (uint) {
+		return employeeCount;
 	}
 
 	function setPower(uint8 _power) public onlyOwner {
