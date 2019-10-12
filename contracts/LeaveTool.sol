@@ -51,8 +51,6 @@ contract LeaveTool {
 		managers[msg.sender] = 1;
 
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
-		addEmployee("karpmar", "Marc Karp", "CPT");
-
 	}
 
 	/*
