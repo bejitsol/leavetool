@@ -1,3 +1,5 @@
+//TODO - Move this class into a separate file
+//Testing constants
 class TestConstants {
 	constructor(){
 		this.id = 1;
@@ -9,22 +11,20 @@ class TestConstants {
 		this.decreaseLeaveBy = 1;
 		this.defaultAddress = "0x0000000000000000000000000000000000000001";
 		this.updatedAddress = "0x0000000000000000000000000000000000000002";
-
 	}
 }
+
 var LeaveTool = artifacts.require("./LeaveTool.sol");
 
-//Testing constants
 
 contract("LeaveTool", (accounts) => {
-	var testConstants = null;
+	let testConstants = null;
 	let leaveTool = null;
 
 	before(async() => {
 		leaveTool = await LeaveTool.deployed();
 		testConstants = new TestConstants();
 	});
-
 
 	it("Should desploy a smart contract properly", async () => {
 		assert(leaveTool.address != "");
@@ -59,6 +59,24 @@ contract("LeaveTool", (accounts) => {
 		await leaveTool.setEmployeeAddress(testConstants.id, testConstants.updatedAddress);
 		const address = await leaveTool.getEmployeeAddress(testConstants.id);
 		assert(address === testConstants.updatedAddress, "Employee address is incorrect.");
+	});
+
+	it("Get the default power value of 10", async () => {
+		const power = await leaveTool.getPower();
+		assert(power.toNumber() === 10);
+	});
+
+	it("Set the power value to 100", async () => {
+		await leaveTool.setPower(100);
+		const power = await leaveTool.getPower();
+		assert(power.toNumber() === 100);
+	})
+
+	it("Decreases the employee leave", async () => {
+		const currentLeave = await leaveTool.getEmployeeLeave(testConstants.id);
+		await leaveTool.decreaseEmployeeLeave(testConstants.id, testConstants.decreaseLeaveBy);
+		const newLeave = await leaveTool.getEmployeeLeave(testConstants.id);
+		assert(currentLeave.toNumber() - newLeave.toNumber() === testConstants.decreaseLeaveBy);
 	});
 });
 

@@ -10,7 +10,7 @@ contract LeaveTool {
 	using SafeMath for uint256;
 
 	address public owner;
-	uint8 power;
+	uint8 private power;
 	uint private employeeCount;
 
 	mapping(uint => Employee) public employees;
@@ -51,6 +51,8 @@ contract LeaveTool {
 		managers[msg.sender] = 1;
 
 		addEmployee("joycbeva", "Bevan Joyce", "CPT");
+		addEmployee("karpmar", "Marc Karp", "CPT");
+
 	}
 
 	/*
@@ -64,6 +66,14 @@ contract LeaveTool {
 	function getEmployeeAddress(uint _id) public view returns (address) {
 		//Do some validation so it's not public
 		return employees[_id].accountAddress;
+	}
+
+	function getEmployeeLeave(uint _id) public view returns (uint8) {
+		return employees[_id].leaveTotal;
+	}
+
+	function getPower() public view returns (uint8) {
+		return power;
 	}
 
 	/*

@@ -52,7 +52,7 @@ App = {
     // Load contract data
     App.contracts.LeaveTool.deployed().then(function(instance) {
       leaveToolInstance = instance;
-      return leaveToolInstance.employeeCount();
+      return leaveToolInstance.getEmployeeCount();
     }).then(function(employeeCount) {
       var employeeResults = $("#employeeResults");
       employeeResults.empty();
@@ -63,9 +63,10 @@ App = {
           var username = employee[1];
           var name = employee[2];
           var location = employee[3];
+          var leaveTotal = employee[4];
 
           // Render employee Result
-          var employeeTemplate = "<tr><th>" + id + "</th><td>" + username + "</td><td>" + name + "</td><td>" + location +"</td></tr>"
+          var employeeTemplate = "<tr><th>" + id + "</th><td>" + username + "</td><td>" + name + "</td><td>" + location + "</td><td>" + leaveTotal + "</td></tr>"
           employeeResults.append(employeeTemplate);
         });
       }
