@@ -70,7 +70,7 @@ contract("LeaveTool", (accounts) => {
 		await leaveTool.setPower(100);
 		const power = await leaveTool.getPower();
 		assert(power.toNumber() === 100);
-	})
+	});
 
 	it("Decreases the employee leave", async () => {
 		const currentLeave = await leaveTool.getEmployeeLeave(testConstants.id);
